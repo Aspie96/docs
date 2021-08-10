@@ -429,11 +429,12 @@ do the following to run it from Python:
 
 ```python
 import tensorflow as tf
+import numpy as np
 zero_out_module = tf.load_op_library('./zero_out.so')
 print(zero_out_module.zero_out([[1, 2], [3, 4]]).numpy())
 
 # Prints
-array([[1, 0], [0, 0]], dtype=int32)
+print(np.array([[1, 0], [0, 0]], dtype='int32'))
 ```
 
 Keep in mind, the generated function will be given a snake\_case name (to comply
